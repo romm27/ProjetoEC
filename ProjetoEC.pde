@@ -12,7 +12,7 @@ void mouseClicked(){
 }
 
 public void checkForAreas(){
-  //Check if the tap was inside any active loaded area
+  //Check if the tap was inside any active loaded area1
   if(loadedAreas.length > 0 ){
     for(int i = 0; i < loadedAreas.length; i++){
       if(mouseX > loadedAreas[i].topLeftX && mouseX < loadedAreas[i].bottomRightX){
