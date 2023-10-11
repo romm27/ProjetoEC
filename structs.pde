@@ -1,3 +1,7 @@
+//Use this file to declare data structures.
+
+
+//Describes an area of the canvas that is clickable.
 public class ClickArea{
   //Pos
   int topLeftX, topLeftY;
