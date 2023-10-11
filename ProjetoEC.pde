@@ -1,19 +1,26 @@
-
+//Arquivo Principal
 
 //UI Graphics
 PImage background;
 ClickArea[] loadedAreas;
+SceneBehaviour currentBehaviour;
 
 void setup(){
   size(450, 800);
   PrintMainMenu();
 }
 
-void mouseClicked(){
-  checkForAreas();
+void draw(){
+  if(currentBehaviour != null){
+    currentBehaviour.Update();
+  }
 }
 
-public void checkForAreas(){
+void mouseClicked(){
+  CheckForTap();
+}
+
+public void CheckForTap(){
   //Check if the tap was inside any active loaded area1
   if(loadedAreas.length > 0 ){
     for(int i = 0; i < loadedAreas.length; i++){
