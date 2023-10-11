@@ -19,7 +19,7 @@ public void PrintMainMenu(){
   
   //Assign
   loadedAreas = new ClickArea[1];
-  loadedAreas[0] = new ClickArea(0,0,0,0, new OnClickCommandOpenContent());
+  loadedAreas[0] = new ClickArea(50,250,380,330, new OnClickCommandOpenContent());
 }
 
 public void PrintContentPage(){
@@ -35,5 +35,5 @@ public void PrintContentPage(){
   
   //Assign
   loadedAreas = new ClickArea[1];
-  loadedAreas[0] = new ClickArea(0,0,0,0, new OnClickCommandOpenMainMenu()); //Return to main menu
+  loadedAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
 }

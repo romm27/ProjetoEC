@@ -3,9 +3,9 @@
 //Describes an area of the canvas that is clickable.
 public class ClickArea{
   //Pos
-  int topLeftX, topLeftY;
-  int bottomRightX, bottomRightY;
-  public OnClickCommand storedCommand = null;
+  int topLeftX, topLeftY; //Trigger area click position
+  int bottomRightX, bottomRightY; //Trigger area click position
+  public OnClickCommand storedCommand = null; //Effect from click
   
   public ClickArea(int x1, int y1, int x2,int y2, OnClickCommand command){
     topLeftX = x1;

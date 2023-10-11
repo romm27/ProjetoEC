@@ -1,3 +1,6 @@
+//Use this file to define and extend command calls.
+//I should probably have done lambdas instead of inheritance for this
+//Who the fuck am I typing this for
 
 public class OnClickCommand {
   public void OnClick(){}
