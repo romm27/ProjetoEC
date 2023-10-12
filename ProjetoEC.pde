@@ -5,7 +5,7 @@ boolean debugMode = true;
 
 //UI Graphics
 PImage background;
-ClickArea[] loadedAreas;
+ClickArea[] clickableAreas;
 SceneBehaviour currentBehaviour;
 
 void setup(){
@@ -31,11 +31,11 @@ public void CheckForTap(){
     print("y:" + mouseY + '\n');
   }
   
-  if(loadedAreas.length > 0 ){
-    for(int i = 0; i < loadedAreas.length; i++){
-      if(mouseX > loadedAreas[i].topLeftX && mouseX < loadedAreas[i].bottomRightX){
-          if(mouseY > loadedAreas[i].topLeftY && mouseY < loadedAreas[i].bottomRightY){
-            loadedAreas[i].storedCommand.OnClick();
+  if(clickableAreas.length > 0 ){
+    for(int i = 0; i < clickableAreas.length; i++){
+      if(mouseX > clickableAreas[i].topLeftX && mouseX < clickableAreas[i].bottomRightX){
+          if(mouseY > clickableAreas[i].topLeftY && mouseY < clickableAreas[i].bottomRightY){
+            clickableAreas[i].storedCommand.OnClick();
             //print("Called!");
           }
       }

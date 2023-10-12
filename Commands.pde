@@ -18,3 +18,10 @@ public class OnClickCommandOpenContent extends OnClickCommand{
     PrintContentPage();
   }
 }
+
+//Open Quiz
+public class OnClickCommandOpenQuiz extends OnClickCommand{
+  public void OnClick(){
+    PrintQuizPage();
+  }
+}
