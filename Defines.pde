@@ -1,7 +1,7 @@
 //Use this file to define variables.
 
 //Global Static
-final float appVersion = 1.0f; //<-- current version of the map
+final float appVersion = 1.0f; //<-- current version of the app
 
 //Global Settings
 boolean saveStats = true;
