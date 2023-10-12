@@ -4,7 +4,6 @@
 boolean debugMode = false;
 
 //UI Graphics
-PImage background;
 ClickArea[] loadedAreas;
 SceneBehaviour currentBehaviour;
 
