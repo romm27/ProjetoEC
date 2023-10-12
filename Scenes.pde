@@ -22,6 +22,7 @@ public void PrintMainMenu(){
   loadedAreas[0] = new ClickArea(50,250,380,330, new OnClickCommandOpenContent());
 }
 
+//Content Picker Page
 public void PrintContentPage(){
   //Load Images
   background = loadImage("content.png");
@@ -31,7 +32,7 @@ public void PrintContentPage(){
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
-  currentBehaviour = null;
+  currentBehaviour = null; //<--- This page needs custom behaviour!!
   
   //Assign
   loadedAreas = new ClickArea[1];
