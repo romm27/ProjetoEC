@@ -1,9 +1,10 @@
 //Main Flow File
 
 //Defines
-boolean debugMode = false;
+boolean debugMode = true;
 
 //UI Graphics
+PImage background;
 ClickArea[] loadedAreas;
 SceneBehaviour currentBehaviour;
 
