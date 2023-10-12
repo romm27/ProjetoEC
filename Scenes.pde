@@ -26,7 +26,7 @@ public void PrintContentPage(){
   //Load Images
   background = loadImage("content.png");
   
-  //Main Menu
+  //Content Page
   background(165,165,255);
   image(background, 0, 0, width, height);
   
