@@ -27,7 +27,7 @@ public void PrintMainMenu(){
 //Content Picker Page
 public void PrintContentPage(){
   //Load Images
-  background = loadImage("content.png");
+  background = loadImage("blankpage.png");
   
   //Content Page
   background(165,165,255);
@@ -46,6 +46,7 @@ public void PrintContentPage(){
 public void PrintQuizPage(){
   //Load Images
   background = loadImage("quiz.png");
+  questionImage = loadImage("tabela.png");
   
   //Content Page
   background(165,165,255);
@@ -57,6 +58,20 @@ public void PrintQuizPage(){
   //Assign
   clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  
+  //Question text
+  fill(#6057e0);// text color
+  text("Qual desses resultados está\nerrado? Qual seria a resposta\ncorreta?", 40,180);
+  
+  //Question image
+  image(questionImage,(width/2-questionImage.width/2),263);
+    
+  //Answers text
+  text("7 e 9", 95,536);//a)
+  text("18 e 22", 95,602);//b)
+  text("7 e 8", 95,675);//c)
+  text("22 e 23", 95,741);//d)
+  
 }
 //Ana
 public void PrintOptionsPage(){

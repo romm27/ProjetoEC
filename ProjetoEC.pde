@@ -5,15 +5,20 @@ boolean debugMode = true;
 
 //UI Graphics
 PImage background;
+PImage questionImage;
 ClickArea[] clickableAreas;
 SceneBehaviour currentBehaviour;
 
-// Click areas <- ArrayList push 
-
+//Text
+PFont f;
 
 void setup(){
   size(450, 800);
   PrintMainMenu();
+  
+  // Create the font from the .ttf file in the data folder
+  f = createFont("SNACKID.otf", 25);
+  textFont(f);
 }
 
 void draw(){
