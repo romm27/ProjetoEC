@@ -34,10 +34,10 @@ public void CheckForTap(){
     print("y:" + mouseY + '\n');
   }
   
-  for(int i = 0; i < loadedAreas.length; i++){
-    if(mouseX > loadedAreas[i].left && mouseX < loadedAreas[i].right &&
-       mouseY > loadedAreas[i].top && mouseY < loadedAreas[i].bottom){
-          loadedAreas[i].storedCommand.OnClick();
+  for(int i = 0; i < clickableAreas.length; i++){
+    if(mouseX > clickableAreas[i].left && mouseX < clickableAreas[i].right &&
+       mouseY > clickableAreas[i].top && mouseY < clickableAreas[i].bottom){
+          clickableAreas[i].storedCommand.OnClick();
           print("Called!");
         }
     }
