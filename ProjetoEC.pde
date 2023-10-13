@@ -8,6 +8,9 @@ PImage background;
 ClickArea[] clickableAreas;
 SceneBehaviour currentBehaviour;
 
+// Click areas <- ArrayList push 
+
+
 void setup(){
   size(450, 800);
   PrintMainMenu();
@@ -31,14 +34,11 @@ public void CheckForTap(){
     print("y:" + mouseY + '\n');
   }
   
-  if(clickableAreas.length > 0 ){
-    for(int i = 0; i < clickableAreas.length; i++){
-      if(mouseX > clickableAreas[i].topLeftX && mouseX < clickableAreas[i].bottomRightX){
-          if(mouseY > clickableAreas[i].topLeftY && mouseY < clickableAreas[i].bottomRightY){
-            clickableAreas[i].storedCommand.OnClick();
-            //print("Called!");
-          }
-      }
+  for(int i = 0; i < loadedAreas.length; i++){
+    if(mouseX > loadedAreas[i].left && mouseX < loadedAreas[i].right &&
+       mouseY > loadedAreas[i].top && mouseY < loadedAreas[i].bottom){
+          loadedAreas[i].storedCommand.OnClick();
+          print("Called!");
+        }
     }
-  }
 }

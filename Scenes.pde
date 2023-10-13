@@ -18,9 +18,11 @@ public void PrintMainMenu(){
   currentBehaviour = null;
   
   //Assign
-  clickableAreas = new ClickArea[2];
-  clickableAreas[0] = new ClickArea(50,250,380,330, new OnClickCommandOpenContent());
-  clickableAreas[1] = new ClickArea(71, 390,380, 500, new OnClickCommandOpenQuiz());
+  clickAreas = new ClickArea[2];
+  // 50,380  250,330
+  clickAreas[0] = new ClickArea(250, 380, 50, 330, new OnClickCommandOpenContent());
+  clickAreas[1] = new ClickArea(550, 630, 50, 330, new OnClickCommandOpenContent());
+  //loadedAreas[1] = new ClickArea(50,550,380,630, new OnClickCommandOpenOptions());
 }
 
 //Content Picker Page
@@ -36,8 +38,8 @@ public void PrintContentPage(){
   currentBehaviour = null; //<--- This page needs custom behaviour!!
   
   //Assign
-  clickableAreas = new ClickArea[1];
-  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickAreas = new ClickArea[1];
+  clickAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
 }
 
 
@@ -54,6 +56,22 @@ public void PrintQuizPage(){
   currentBehaviour = null; //<--- This page needs custom behaviour!!
   
   //Assign
-  clickableAreas = new ClickArea[1];
-  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickAreas = new ClickArea[1];
+  clickAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+}
+//Ana
+public void PrintOptionsPage(){
+  //Load Images
+  background = loadImage("blankpage.png");
+  
+  //Main Menu
+  background(165,165,255);
+  image(background, 0, 0, width, height);
+  
+  //Extra Behaviour
+  currentBehaviour = null;
+  
+  //Assign
+  clickAreas = new ClickArea[1];
+  clickAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
 }

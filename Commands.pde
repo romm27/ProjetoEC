@@ -25,3 +25,10 @@ public class OnClickCommandOpenQuiz extends OnClickCommand{
     PrintQuizPage();
   }
 }
+
+//Open Options Menu - Ana
+public class OnClickCommandOpenOptions extends OnClickCommand{
+  public void OnClick(){
+    PrintOptionsPage();
+  }
+}
