@@ -26,9 +26,23 @@ public class OnClickCommandOpenQuiz extends OnClickCommand{
   }
 }
 
-//Open Options Menu - Ana
+//Open Options Menu
 public class OnClickCommandOpenOptions extends OnClickCommand{
   public void OnClick(){
     PrintOptionsPage();
+  }
+}
+
+//Open correct answer page
+public class OnClickCommandOpenCorrectAnswer extends OnClickCommand{
+  public void OnClick(){
+    PrintCorrectAnswerPage();
+  }
+}
+
+//Open incorrect answer page
+public class OnClickCommandOpenIncorrectAnswer extends OnClickCommand{
+  public void OnClick(){
+    PrintCorrectIncorrectPage();
   }
 }
