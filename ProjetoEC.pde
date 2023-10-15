@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
-
+import ddf.minim.*;
+Minim minim;
+AudioPlayer song;
 //Defines
 boolean debugMode = true;
 
@@ -24,7 +26,9 @@ void setup(){
   size(450, 800);
   
   PrintMainMenu();
-  
+  //Som - Anthony
+  minim = new Minim(this);
+  song = minim.loadFile("clicksom.mp3");
   //Reads the questions file. Let the data preloaded into the app, for a better performance
   String[] questionsLines = loadStrings("questions.tsv");
   
@@ -64,6 +68,8 @@ public void CheckForTap(){
        mouseY > clickableAreas[i].top && mouseY < clickableAreas[i].bottom){
           clickableAreas[i].storedCommand.OnClick();
           print("Called!");
+          song.play();
+          song.rewind();
         }
     }
 }
