@@ -10,11 +10,11 @@ public class ClickArea{
   public OnClickCommand storedCommand = null; //Effect from click
   
   public ClickArea(int _left, int _top, int _right, int _bottom, OnClickCommand command){
-    this.top = _top;
-    this.bottom = _bottom;
-    this.left = _left;
-    this.right = _right;
-    storedCommand = command;
+   this.top = _top;
+   this.bottom = _bottom;
+   this.left = _left;
+   this.right = _right;
+   storedCommand = command;
   }
 }
 
@@ -45,22 +45,22 @@ class Question {
   }
   
   String[] shuffleAnswers() {
-    var answersList = new ArrayList<>(Arrays.asList(answers));
-    Collections.shuffle(answersList);
+   var answersList = new ArrayList<>(Arrays.asList(answers));
+   Collections.shuffle(answersList);
 
-    return answersList.toArray(new String[answersList.size()]);
+   return answersList.toArray(new String[answersList.size()]);
   }
   
 }
 
 ArrayList selectQuestionsByGrade(ArrayList<Question> questions, String grade) {
-  ArrayList gradeQuestions = new ArrayList();
+ ArrayList gradeQuestions = new ArrayList();
   
-  for (int j = 0 ; j < questions.size(); j++) {      
-    if ((questions.get(j)).grade == grade) {
-      gradeQuestions.add(questions.get(j));
-    }
-  }
+ for (int j = 0 ; j < questions.size(); j++) {      
+   if ((questions.get(j)).grade == grade) {
+     gradeQuestions.add(questions.get(j));
+   }
+ }
   
   return gradeQuestions;
 }

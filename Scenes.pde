@@ -42,7 +42,6 @@ public void PrintContentPage(){
   
 }
 
-
 //Quiz
 public void PrintQuizPage(){
   //Load Images
@@ -93,11 +92,8 @@ public void PrintOptionsPage(){
   //Assign
   clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
-  
-  print(selectQuestionsByGrade(questions,"1"));
 
 }
-
 
 public void PrintCorrectAnswerPage(){
   //Load Images
@@ -116,10 +112,6 @@ public void PrintCorrectAnswerPage(){
   
   //Text
   text("Resposta correta!", 40,180);
-  
-  //Need to add the points
-  
-  //Questions counter
   
 }
 
@@ -140,7 +132,5 @@ public void PrintCorrectIncorrectPage(){
   
   //Text
   text("Resposta incorreta!", 40,180);
-  
-  //Questions counter
   
 }

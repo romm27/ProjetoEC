@@ -1,5 +1,10 @@
-import java.util.Arrays;
 //Main Flow File
+
+//import
+import java.util.Arrays;
+import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.Scanner; // Import the Scanner class to read text files
 
 //Defines
 boolean debugMode = true;
@@ -13,8 +18,6 @@ ArrayList questions = new ArrayList();
 
 //Text
 PFont f;
-
-
 
 void setup(){
   size(450, 800);
@@ -62,11 +65,7 @@ public void CheckForTap(){
     }
 }
 
-//read file
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
-
+//Read the questions file
 public class ReadFile {
   public void main(String[] args) {
     try {
@@ -78,7 +77,7 @@ public class ReadFile {
       }
       myReader.close();
     } catch (FileNotFoundException e) {
-      System.out.println("An error occurred.");
+      System.out.println("Ocorreu um erro.");
       e.printStackTrace();
     }
   }
