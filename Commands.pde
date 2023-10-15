@@ -13,9 +13,9 @@ public class OnClickCommandOpenMainMenu extends OnClickCommand{
 }
 
 //Open Content Menu
-public class OnClickCommandOpenContent extends OnClickCommand{
+public class OnClickCommandOpenAuthors extends OnClickCommand{
   public void OnClick(){
-    PrintContentPage();
+    PrintAuthorsPage();
   }
 }
 

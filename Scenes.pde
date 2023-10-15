@@ -9,23 +9,58 @@ void PrintSceneBase(){
 public void PrintMainMenu(){
   //Load Images
   background = loadImage("mainmenu.png");
+  logo = loadImage("logo.png");
   
+  //Create the font from the file in the data folder. 
+  f = createFont("SNACKID.otf", 50);
+  textFont(f);
+    
   //Main Menu
   background(165,165,255);
-  image(background, 0, 0, width, height);
+  //image(background, 0, 0, width, height);
+  image(logo, 75, 30, 300 , 170);
   
   //Extra Behaviour
   currentBehaviour = null;
   
+  //Buttons
+  fill(255);
+  stroke(0,0,0,0);
+  rectMode(CENTER);
+
+  fill(#7e7efe);
+  rect(width/2+10, 297, 317, 110, 32);
+  fill(255);
+  rect(width/2, 287, 317, 110, 32);
+  
+  fill(#7e7efe);
+  rect(width/2+10, 460, 317, 110, 32);
+  fill(255);  fill(255);
+  rect(width/2, 450, 317, 110, 32);
+  
+  fill(#7e7efe);
+  rect(width/2+10, 623, 317, 110, 32);
+  fill(255);
+  rect(width/2, 613, 317, 110, 32);
+  
+  //Question text
+    fill(#6057e0);// text color
+  text("OPÇÕES", 123,305);
+  text("QUIZ", 155,470);
+  text("AUTORES", 105,633);
+  textSize(30);
+  text("PUCPR", 170,760);
+    
   //Assign
   clickableAreas = new ClickArea[3];
-  clickableAreas[0] = new ClickArea(75, 230, 380, 340, new OnClickCommandOpenContent()); //Content
-  clickableAreas[1] = new ClickArea(70, 390, 390, 500, new OnClickCommandOpenQuiz()); //Qiz
-  clickableAreas[2] = new ClickArea(70,540,380,640, new OnClickCommandOpenOptions()); //Options
+  clickableAreas[0] = new ClickArea(66, 232, 384, 343, new OnClickCommandOpenOptions()); //Athors
+  clickableAreas[1] = new ClickArea(66, 396, 384, 506, new OnClickCommandOpenQuiz()); //Quiz
+  clickableAreas[2] = new ClickArea(66,558,384,669, new OnClickCommandOpenAuthors()); //Options
 }
 
-//Content Picker Page
-public void PrintContentPage(){
+//Authors page
+public void PrintAuthorsPage(){
+  
   //Load Images
   background = loadImage("blankpage.png");
   
@@ -61,7 +96,7 @@ public void PrintQuizPage(){
   print(question);
 
   //Question text
-  fill(#6057e0);// text color
+  textSize(25);
   text(question.text , 40,180);
   
   //Question image
@@ -86,6 +121,7 @@ public void PrintQuizPage(){
 }
 
 public void PrintOptionsPage(){
+
   //Load Images
   background = loadImage("blankpage.png");
   

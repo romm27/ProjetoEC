@@ -11,6 +11,7 @@ boolean debugMode = true;
 
 //UI Graphics
 PImage background;
+PImage logo;
 PImage questionImage;
 ClickArea[] clickableAreas;
 SceneBehaviour currentBehaviour;
@@ -21,11 +22,8 @@ PFont f;
 
 void setup(){
   size(450, 800);
-  PrintMainMenu();
   
-  //Create the font from the file in the data folder. 
-  f = createFont("SNACKID.otf", 25);
-  textFont(f);
+  PrintMainMenu();
   
   //Reads the questions file. Let the data preloaded into the app, for a better performance
   String[] questionsLines = loadStrings("questions.tsv");
@@ -42,6 +40,11 @@ void draw(){
   if(currentBehaviour != null){
     currentBehaviour.Update();
   }
+    
+  //Create the font from the file in the data folder. 
+  f = createFont("SNACKID.otf", 25);
+  textFont(f);
+  
 }
 
 void mouseClicked(){
