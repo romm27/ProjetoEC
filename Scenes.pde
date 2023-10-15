@@ -54,14 +54,6 @@ public void PrintQuizPage(){
   //Extra Behaviour
   currentBehaviour = null; //<--- This page needs custom behaviour!!
   
-  //Assign
-  clickableAreas = new ClickArea[5];
-  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
-  clickableAreas[1] = new ClickArea(31, 505, 430, 547, new OnClickCommandOpenCorrectAnswer()); //Correct answer
-  clickableAreas[2] = new ClickArea(31, 574, 430, 615, new OnClickCommandOpenIncorrectAnswer()); //Incorrect answer
-  clickableAreas[3] = new ClickArea(31,646,430,687, new OnClickCommandOpenIncorrectAnswer()); //Incorrect answer
-  clickableAreas[4] = new ClickArea(31,712,430,753, new OnClickCommandOpenIncorrectAnswer()); //Incorrect answer
-  
   //Question selection
   ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions,"1");// ----> grade is not selected by user yet
   int selectedQuestion = selectQuestion(gradeQuestions);
@@ -82,6 +74,14 @@ public void PrintQuizPage(){
   text(shuffledAnswers[1], 95,602);//b)
   text(shuffledAnswers[2], 95,675);//c)
   text(shuffledAnswers[3], 95,741);//d)
+  
+  //Assign
+  clickableAreas = new ClickArea[5];
+  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[1] = new ClickArea(31, 505, 430, 547, new OnClickCommandAnswerVerifier(question, shuffledAnswers[0])); 
+  clickableAreas[2] = new ClickArea(31, 574, 430, 615, new OnClickCommandAnswerVerifier(question, shuffledAnswers[1]));
+  clickableAreas[3] = new ClickArea(31,646,430,687, new OnClickCommandAnswerVerifier(question, shuffledAnswers[2])); 
+  clickableAreas[4] = new ClickArea(31,712,430,753, new OnClickCommandAnswerVerifier(question, shuffledAnswers[3])); 
   
 }
 

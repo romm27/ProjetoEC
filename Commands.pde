@@ -33,16 +33,31 @@ public class OnClickCommandOpenOptions extends OnClickCommand{
   }
 }
 
-//Open correct answer page
-public class OnClickCommandOpenCorrectAnswer extends OnClickCommand{
-  public void OnClick(){
-    PrintCorrectAnswerPage();
-  }
-}
+//Open correct or incorrect answer page
+public class OnClickCommandAnswerVerifier extends OnClickCommand{
+  public Question question;
+  public String shuffledAnswer;
+  
+  public OnClickCommandAnswerVerifier(Question question, String shuffledAnswer) {
+   super();
+   this.question = question;
+   this.shuffledAnswer = shuffledAnswer;
 
-//Open incorrect answer page
-public class OnClickCommandOpenIncorrectAnswer extends OnClickCommand{
+  }
+  
   public void OnClick(){
-    PrintCorrectIncorrectPage();
+    
+    if (this.shuffledAnswer.equals(this.question.answers[0])) {
+      PrintCorrectAnswerPage();
+      println(this.question.text);
+      println(this.question.answers[0]);
+      
+    }
+    else {
+     PrintCorrectIncorrectPage();
+     println(this.question.text);
+     println(this.question.answers[0]);
+
+    }
   }
 }
