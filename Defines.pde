@@ -10,5 +10,5 @@ boolean soundEffects = true;
 int secondsPerQuestion = 30;
 
 //Global Data
-int rights = 0; //<--- number of question gotten right ever since starting using the program
-int wrongs = 0; //<--- number of question gotten wrong ever since starting using the program
+int right = 0; //<--- number of question gotten right ever since starting using the program
+int wrong = 0; //<--- number of question gotten wrong ever since starting using the program

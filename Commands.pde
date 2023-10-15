@@ -49,14 +49,10 @@ public class OnClickCommandAnswerVerifier extends OnClickCommand{
     
     if (this.shuffledAnswer.equals(this.question.answers[0])) {
       PrintCorrectAnswerPage();
-      println(this.question.text);
-      println(this.question.answers[0]);
       
     }
     else {
      PrintCorrectIncorrectPage();
-     println(this.question.text);
-     println(this.question.answers[0]);
 
     }
   }

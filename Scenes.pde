@@ -118,7 +118,11 @@ public void PrintCorrectAnswerPage(){
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
   
   //Text
-  text("Resposta correta!", 40,180);
+  text("Resposta correta!", 40,180); 
+  
+  //Points
+  right += 1;
+  print(right);
   
 }
 
@@ -139,5 +143,9 @@ public void PrintCorrectIncorrectPage(){
   
   //Text
   text("Resposta incorreta!", 40,180);
+  
+  //Points
+  wrong += 1;
+  print(wrong);
   
 }
