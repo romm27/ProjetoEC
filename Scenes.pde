@@ -94,6 +94,8 @@ public void PrintOptionsPage(){
   clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
   
+  print(selectQuestionsByGrade(questions,"1"));
+
 }
 
 
@@ -136,9 +138,9 @@ public void PrintCorrectIncorrectPage(){
   clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
   
-    //Text
+  //Text
   text("Resposta incorreta!", 40,180);
   
-    //Questions counter
+  //Questions counter
   
 }
