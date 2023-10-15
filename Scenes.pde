@@ -44,9 +44,8 @@ public void PrintContentPage(){
 
 //Quiz
 public void PrintQuizPage(){
-  //Load Images
+  //Load background
   background = loadImage("quiz.png");
-  questionImage = loadImage("tabela.png");
   
   //Content Page
   background(165,165,255);
@@ -63,18 +62,26 @@ public void PrintQuizPage(){
   clickableAreas[3] = new ClickArea(31,646,430,687, new OnClickCommandOpenIncorrectAnswer()); //Incorrect answer
   clickableAreas[4] = new ClickArea(31,712,430,753, new OnClickCommandOpenIncorrectAnswer()); //Incorrect answer
   
+  //Question selection
+  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions,"1");// ----> grade is not selected by user yet
+  int selectedQuestion = selectQuestion(gradeQuestions);
+  Question question = gradeQuestions.get(selectedQuestion);
+  print(question);
+
   //Question text
   fill(#6057e0);// text color
-  text("Qual desses resultados está\nerrado? Qual seria a resposta\ncorreta?", 40,180);
+  text(question.text , 40,180);
   
   //Question image
+  questionImage = loadImage(question.image);
   image(questionImage,(width/2-questionImage.width/2),263);
     
   //Answers text
-  text("7 e 9", 95,536);//a)
-  text("18 e 22", 95,602);//b)
-  text("7 e 8", 95,675);//c)
-  text("22 e 23", 95,741);//d)
+  String[] shuffledAnswers = question.shuffleAnswers();
+  text(shuffledAnswers[0], 95,536);//a)
+  text(shuffledAnswers[1], 95,602);//b)
+  text(shuffledAnswers[2], 95,675);//c)
+  text(shuffledAnswers[3], 95,741);//d)
   
 }
 

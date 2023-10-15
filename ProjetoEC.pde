@@ -32,7 +32,7 @@ void setup(){
   
   for (int i = 0 ; i < questionsLines.length; i++) {
     var question = questionsLines[i].split("\t"); 
-    var questionObj = new Question(question[0], question[6], question[5], Arrays.copyOfRange(question,1,4));
+    var questionObj = new Question(question[0], question[6], question[5], Arrays.copyOfRange(question,1,5));
     questions.add(questionObj);
   }
   
@@ -63,22 +63,4 @@ public void CheckForTap(){
           print("Called!");
         }
     }
-}
-
-//Read the questions file
-public class ReadFile {
-  public void main(String[] args) {
-    try {
-      File questionsFile = new File("questions.csv");
-      Scanner myReader = new Scanner(questionsFile);
-      while (myReader.hasNextLine()) {
-        String data = myReader.nextLine();
-        System.out.println(data);
-      }
-      myReader.close();
-    } catch (FileNotFoundException e) {
-      System.out.println("Ocorreu um erro.");
-      e.printStackTrace();
-    }
-  }
 }

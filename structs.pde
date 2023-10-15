@@ -2,6 +2,7 @@
 
 //import
 import java.util.Collections;
+import java.util.Random;
 
 //Describes an area of the canvas that is clickable.
 public class ClickArea{
@@ -34,8 +35,7 @@ class Question {
   public String grade;
   public String image;
   public String[] answers;
-  public String correctAnswer;
-    
+     
   public Question(String text, String grade, String image, String[] answers) {
    this.text = text;
    this.grade = grade;
@@ -56,11 +56,18 @@ class Question {
 ArrayList selectQuestionsByGrade(ArrayList<Question> questions, String grade) {
  ArrayList gradeQuestions = new ArrayList();
   
- for (int j = 0 ; j < questions.size(); j++) {      
-   if ((questions.get(j)).grade == grade) {
+ for (int j = 0 ; j < questions.size(); j++) {     
+    if (questions.get(j).grade.equals(grade)) {
      gradeQuestions.add(questions.get(j));
    }
  }
   
   return gradeQuestions;
+}
+
+int selectQuestion(ArrayList gradeQuestions){
+  Random rand = new Random(); // Instance of random class
+  
+  return(rand.nextInt(gradeQuestions.size())); 
+
 }
