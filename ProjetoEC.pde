@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
 import ddf.minim.*;
 Minim minim;
-AudioPlayer song;
+AudioPlayer song, musica;
 //Defines
 boolean debugMode = true;
 
@@ -29,6 +29,8 @@ void setup(){
   //Som - Anthony
   minim = new Minim(this);
   song = minim.loadFile("clicksom.mp3");
+  musica = minim.loadFile("SafetyNet.mp3");
+  musica.loop();
   //Reads the questions file. Let the data preloaded into the app, for a better performance
   String[] questionsLines = loadStrings("questions.tsv");
   
