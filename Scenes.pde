@@ -141,7 +141,7 @@ public void PrintOptionsPage(){
 
 public void PrintCorrectAnswerPage(){
   //Load Images
-  background = loadImage("blankpage.png");
+  background = loadImage("purplepage.png");
   
   //Main Menu  
   background(165,165,255);
@@ -151,21 +151,31 @@ public void PrintCorrectAnswerPage(){
   currentBehaviour = null;
   
   //Assign
-  clickableAreas = new ClickArea[1];
+  clickableAreas = new ClickArea[2];
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[1] = new ClickArea(149,624,300,735, new OnClickCommandOpenQuiz()); //Go to the next question
   
   //Text
-  text("Resposta correta!", 40,180); 
+  textSize(50);
+  text("Resposta\ncorreta!", 110,400); 
   
   //Points
   right += 1;
-  print(right);
+  
+  //Button
+  fill(#7e7efe);
+  rect(width/2+10, 690, 150, 110, 32);
+  fill(255);
+  rect(width/2, 680, 150, 110, 32); 
+  //Button text
+  fill(#6057e0);
+  text("OK", 190,700);
   
 }
 
 public void PrintIncorrectPage(){
   //Load Images
-  background = loadImage("blankpage.png");
+  background = loadImage("purplepage.png");
   
   //Main Menu  
   background(165,165,255);
@@ -175,15 +185,26 @@ public void PrintIncorrectPage(){
   currentBehaviour = null;
   
   //Assign
-  clickableAreas = new ClickArea[1];
+  clickableAreas = new ClickArea[2];
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[1] = new ClickArea(149,624,300,735, new OnClickCommandOpenQuiz()); //Go to the next question
   
   //Text
-  text("Resposta incorreta!", 40,180);
+  textSize(50);
+  text("Resposta\nincorreta!", 100,400);
   
   //Points
   wrong += 1;
-  print(wrong);
+  
+  //Button
+  fill(#7e7efe);
+  rect(width/2+10, 690, 150, 110, 32);
+  fill(255);
+  rect(width/2, 680, 150, 110, 32); 
+  //Button text
+  fill(#6057e0);
+  text("OK", 190,700);
+  
   
 }
 
