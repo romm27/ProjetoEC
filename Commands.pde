@@ -52,8 +52,15 @@ public class OnClickCommandAnswerVerifier extends OnClickCommand{
       
     }
     else {
-     PrintCorrectIncorrectPage();
+     PrintIncorrectPage();
 
     }
+  }
+}
+
+//Open Endgame Page
+public class OnClickCommandOpenEndgame extends OnClickCommand{
+  public void OnClick(){
+    PrintEndgamePage();
   }
 }

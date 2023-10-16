@@ -44,7 +44,7 @@ public void PrintMainMenu(){
   rect(width/2, 613, 317, 110, 32);
   
   //Question text
-    fill(#6057e0);// text color
+  fill(#6057e0);// text color
   text("OPÇÕES", 123,305);
   text("QUIZ", 155,470);
   text("AUTORES", 105,633);
@@ -53,9 +53,10 @@ public void PrintMainMenu(){
     
   //Assign
   clickableAreas = new ClickArea[3];
-  clickableAreas[0] = new ClickArea(66, 232, 384, 343, new OnClickCommandOpenOptions()); //Athors
+  clickableAreas[0] = new ClickArea(66, 232, 384, 343, new OnClickCommandOpenOptions()); //Options
   clickableAreas[1] = new ClickArea(66, 396, 384, 506, new OnClickCommandOpenQuiz()); //Quiz
-  clickableAreas[2] = new ClickArea(66,558,384,669, new OnClickCommandOpenAuthors()); //Options
+  clickableAreas[2] = new ClickArea(66,558,384,669, new OnClickCommandOpenAuthors()); //Authors
+  
 }
 
 //Authors page
@@ -162,7 +163,7 @@ public void PrintCorrectAnswerPage(){
   
 }
 
-public void PrintCorrectIncorrectPage(){
+public void PrintIncorrectPage(){
   //Load Images
   background = loadImage("blankpage.png");
   
@@ -183,5 +184,39 @@ public void PrintCorrectIncorrectPage(){
   //Points
   wrong += 1;
   print(wrong);
+  
+}
+
+public void PrintEndgamePage(){
+  //Load Images
+  background = loadImage("endgame.jpeg"); //****need the correct image file*****
+  
+  //Main Menu  
+  background(165,165,255);
+  image(background, 0, 0, width, height);
+  
+  //Extra Behaviour
+  currentBehaviour = null;
+  
+  //Assign
+  clickableAreas = new ClickArea[2];
+  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[1] = new ClickArea(149,624,300,735, new OnClickCommandOpenMainMenu()); //Return to main menu
+  
+  //Text
+  textSize(50);
+  fill(#21CE00);
+  text(right, 110,480);
+  fill(#CE1500);
+  text(wrong, 300,480);
+  
+  //Button
+  fill(#7e7efe);
+  rect(width/2+10, 690, 150, 110, 32);
+  fill(255);
+  rect(width/2, 680, 150, 110, 32); 
+  //Button text
+  fill(#6057e0);
+  text("OK", 190,700);
   
 }
