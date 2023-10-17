@@ -39,7 +39,7 @@ void setup(){
   
   for (int i = 0 ; i < questionsLines.length; i++) {
     var question = questionsLines[i].split("\t"); 
-    var questionObj = new Question(question[0], question[6], question[5], Arrays.copyOfRange(question,1,5));
+    var questionObj = new Question(i, question[0], question[6], question[5], Arrays.copyOfRange(question,1,5));
     questions.add(questionObj);
   }
 

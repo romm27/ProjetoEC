@@ -11,6 +11,7 @@ boolean music = true;
 boolean soundEffects = true;
 int secondsPerQuestion = 30;
 int questionUnlockTime = 500; //In miliseconds!
+ArrayList askedQuestions = new ArrayList(); //Questions answered by the user on the quiz
 
 //Global Data
 int right = 0; //<--- number of question gotten right ever since starting using the program

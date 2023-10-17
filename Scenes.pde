@@ -60,6 +60,12 @@ public void PrintMainMenu(){
   clickableAreas[1] = new ClickArea(66, 396, 384, 506, new OnClickCommandOpenQuiz()); //Quiz
   clickableAreas[2] = new ClickArea(66, 558, 384, 669, new OnClickCommandOpenAuthors()); //Authors
   PrintSceneBase();
+  
+  //Reset score
+  right = 0;
+  wrong = 0;
+  askedQuestions = new ArrayList();
+  
 }
 
 //Authors page
@@ -93,14 +99,26 @@ public void PrintQuizPage(){
   //Extra Behaviour
   currentBehaviour = new QuizBehaviour(); //<--- This page needs custom behaviour!!
   
-///////It would be better to move this part of the code outside of PrintQuizPage()
   //Question selection
   ArrayList grades = new ArrayList();
-  grades.add("1");///////Waiting for the options to select grades.
-  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions, grades);////// Waiting for the options to select grades.
-  int selectedQuestion = selectQuestion(gradeQuestions);
-  Question question = gradeQuestions.get(selectedQuestion);
-///////
+  grades.add("1");///////******Waiting for the options to select grades.**********
+  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions, grades);//////***** Waiting for the options to select grades.******
+  ArrayList<Question> availableQuestion = new ArrayList();
+  
+  for (int i = 0 ; i < gradeQuestions.size(); i++){
+    if (!askedQuestions.contains(gradeQuestions.get(i).id)){
+      availableQuestion.add(gradeQuestions.get(i));
+    }
+  }
+
+  if (availableQuestion.size() == 0){
+    PrintEndgamePage();
+    return;
+  }
+
+  int selectedQuestion = selectQuestion(availableQuestion);
+  Question question = availableQuestion.get(selectedQuestion);
+  askedQuestions.add(question.id);
 
   //Question text
   textSize(25);

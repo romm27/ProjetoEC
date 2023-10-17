@@ -35,12 +35,14 @@ class Question {
   public String grade;
   public String image;
   public String[] answers;
+  public int id;
      
-  public Question(String text, String grade, String image, String[] answers) {
+  public Question(int id, String text, String grade, String image, String[] answers) {
    this.text = text;
    this.grade = grade;
    this.image = image;
    this.answers = answers;
+   this.id = id;
 
   }
   
