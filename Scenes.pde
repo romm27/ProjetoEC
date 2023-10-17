@@ -2,7 +2,10 @@
 
 //Call this function every time a scene is loaded for house keeping.
 void PrintSceneBase(){
-  currentBehaviour = null;
+  //currentBehaviour = null;
+  if(debugMode){
+    print("\n Loaded clickable areas:" + str(clickableAreas.length));
+  }
 }
 
 //Print Main Menu to Screen
@@ -56,7 +59,7 @@ public void PrintMainMenu(){
   clickableAreas[0] = new ClickArea(66, 232, 384, 343, new OnClickCommandOpenOptions()); //Options
   clickableAreas[1] = new ClickArea(66, 396, 384, 506, new OnClickCommandOpenQuiz()); //Quiz
   clickableAreas[2] = new ClickArea(66, 558, 384, 669, new OnClickCommandOpenAuthors()); //Authors
-  
+  PrintSceneBase();
 }
 
 //Authors page
@@ -75,20 +78,20 @@ public void PrintAuthorsPage(){
   //Assign
   clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
-  
+  PrintSceneBase();
 }
 
 //Quiz
 public void PrintQuizPage(){
   //Load background
   background = loadImage("quiz.png");
-  
+
   //Quiz Page
   background(165, 165, 255);
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
-  currentBehaviour = null; //<--- This page needs custom behaviour!!
+  currentBehaviour = new QuizBehaviour(); //<--- This page needs custom behaviour!!
   
   //Question selection
   ArrayList grades = new ArrayList();
@@ -119,7 +122,7 @@ public void PrintQuizPage(){
   clickableAreas[2] = new ClickArea(31, 574, 430, 615, new OnClickCommandAnswerVerifier(question, shuffledAnswers[1]));
   clickableAreas[3] = new ClickArea(31, 646, 430, 687, new OnClickCommandAnswerVerifier(question, shuffledAnswers[2])); 
   clickableAreas[4] = new ClickArea(31, 712, 430, 753, new OnClickCommandAnswerVerifier(question, shuffledAnswers[3])); 
-  
+  PrintSceneBase();
 }
 
 public void PrintOptionsPage(){
@@ -169,6 +172,10 @@ public void PrintCorrectAnswerPage(){
   fill(#6057e0);
   text("OK", 190, 700);
   
+  PrintSceneBase();
+
+  //delay(2000);
+  //clickableAreas[1].storedCommand.OnClick();
 }
 
 public void PrintIncorrectPage(){
@@ -199,7 +206,10 @@ public void PrintIncorrectPage(){
   textSize(50);
   fill(#6057e0);
   text("OK", 190, 700);
-  
+  PrintSceneBase();
+
+  //delay(2000);
+  //clickableAreas[1].storedCommand.OnClick();
 }
 
 public void PrintEndgamePage(){
@@ -232,6 +242,6 @@ public void PrintEndgamePage(){
   rect(width/2, 680, 150, 110, 32); 
   //Button text
   fill(#6057e0);
-  text("OK", 190, 700);
-  
+  text("OK", 190, 700); 
+  PrintSceneBase();
 }

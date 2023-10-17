@@ -46,14 +46,13 @@ public class OnClickCommandAnswerVerifier extends OnClickCommand{
   }
   
   public void OnClick(){
-    
+    asnwerOpenTime = millis();
+    waitingForQuizSwitch = true;
     if (this.shuffledAnswer.equals(this.question.answers[0])) {
       PrintCorrectAnswerPage();
-      
     }
     else {
-     PrintIncorrectPage();
-
+      PrintIncorrectPage();
     }
   }
 }

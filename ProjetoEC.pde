@@ -8,8 +8,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 import ddf.minim.*;
 Minim minim;
 AudioPlayer song, musica;
-//Defines
-boolean debugMode = true;
+
 
 //UI Graphics
 PImage background;
@@ -22,9 +21,13 @@ ArrayList questions = new ArrayList();
 //Text
 PFont f;
 
+//Gambiarra
+boolean waitingForQuizSwitch = false;
+int asnwerOpenTime = 0;
+
 void setup(){
   size(450, 800);
-  
+
   PrintMainMenu();
   //Som - Anthony
   minim = new Minim(this);
@@ -39,6 +42,11 @@ void setup(){
     var questionObj = new Question(question[0], question[6], question[5], Arrays.copyOfRange(question,1,5));
     questions.add(questionObj);
   }
+
+
+  //Create the font from the file in the data folder. 
+  f = createFont("SNACKID.otf", 25);
+  textFont(f);
   
 }
 
@@ -46,11 +54,15 @@ void draw(){
   if(currentBehaviour != null){
     currentBehaviour.Update();
   }
-    
-  //Create the font from the file in the data folder. 
-  f = createFont("SNACKID.otf", 25);
-  textFont(f);
-  
+
+  //Gambiarra
+  if(waitingForQuizSwitch){
+    int temp = millis() + 5000;
+    if(temp >= asnwerOpenTime){
+      PrintQuizPage();
+      waitingForQuizSwitch = false;
+    }
+  }
 }
 
 void mouseClicked(){
@@ -69,7 +81,7 @@ public void CheckForTap(){
     if(mouseX > clickableAreas[i].left && mouseX < clickableAreas[i].right &&
        mouseY > clickableAreas[i].top && mouseY < clickableAreas[i].bottom){
           clickableAreas[i].storedCommand.OnClick();
-          print("Called!");
+          //print("Called!");
           song.play();
           song.rewind();
         }
