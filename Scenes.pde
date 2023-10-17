@@ -45,17 +45,17 @@ public void PrintMainMenu(){
   
   //Question text
   fill(#6057e0);// text color
-  text("OPÇÕES", 123,305);
-  text("QUIZ", 155,470);
-  text("AUTORES", 105,633);
+  text("OPÇÕES", 123, 305);
+  text("QUIZ", 155, 470);
+  text("AUTORES", 105, 633);
   textSize(30);
-  text("PUCPR", 170,760);
+  text("PUCPR", 170, 760);
     
   //Assign
   clickableAreas = new ClickArea[3];
   clickableAreas[0] = new ClickArea(66, 232, 384, 343, new OnClickCommandOpenOptions()); //Options
   clickableAreas[1] = new ClickArea(66, 396, 384, 506, new OnClickCommandOpenQuiz()); //Quiz
-  clickableAreas[2] = new ClickArea(66,558,384,669, new OnClickCommandOpenAuthors()); //Authors
+  clickableAreas[2] = new ClickArea(66, 558, 384, 669, new OnClickCommandOpenAuthors()); //Authors
   
 }
 
@@ -66,7 +66,7 @@ public void PrintAuthorsPage(){
   background = loadImage("blankpage.png");
   
   //Authors Page
-  background(165,165,255);
+  background(165, 165, 255);
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
@@ -74,7 +74,7 @@ public void PrintAuthorsPage(){
   
   //Assign
   clickableAreas = new ClickArea[1];
-  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
   
 }
 
@@ -84,7 +84,7 @@ public void PrintQuizPage(){
   background = loadImage("quiz.png");
   
   //Quiz Page
-  background(165,165,255);
+  background(165, 165, 255);
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
@@ -92,34 +92,33 @@ public void PrintQuizPage(){
   
   //Question selection
   ArrayList grades = new ArrayList();
-  grades.add("1");//Waiting to the options to select grades.
-  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions,grades);// ----> Waiting to the options to select grades.
+  grades.add("1");//Waiting for the options to select grades.
+  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions,grades);// ----> Waiting for the options to select grades.
   int selectedQuestion = selectQuestion(gradeQuestions);
   Question question = gradeQuestions.get(selectedQuestion);
-  print(question);
 
   //Question text
   textSize(25);
-  text(question.text , 40,180);
+  text(question.text, 40, 180);
   
   //Question image
   questionImage = loadImage(question.image);
-  image(questionImage,(width/2-questionImage.width/2),263);
+  image(questionImage,(width/2-questionImage.width/2), 263);
     
   //Answers text
   String[] shuffledAnswers = question.shuffleAnswers();
-  text(shuffledAnswers[0], 95,536);//a)
-  text(shuffledAnswers[1], 95,602);//b)
-  text(shuffledAnswers[2], 95,675);//c)
-  text(shuffledAnswers[3], 95,741);//d)
+  text(shuffledAnswers[0], 95, 536);//a)
+  text(shuffledAnswers[1], 95, 602);//b)
+  text(shuffledAnswers[2], 95, 675);//c)
+  text(shuffledAnswers[3], 95, 741);//d)
   
   //Assign
   clickableAreas = new ClickArea[5];
-  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
   clickableAreas[1] = new ClickArea(31, 505, 430, 547, new OnClickCommandAnswerVerifier(question, shuffledAnswers[0])); 
   clickableAreas[2] = new ClickArea(31, 574, 430, 615, new OnClickCommandAnswerVerifier(question, shuffledAnswers[1]));
-  clickableAreas[3] = new ClickArea(31,646,430,687, new OnClickCommandAnswerVerifier(question, shuffledAnswers[2])); 
-  clickableAreas[4] = new ClickArea(31,712,430,753, new OnClickCommandAnswerVerifier(question, shuffledAnswers[3])); 
+  clickableAreas[3] = new ClickArea(31, 646, 430, 687, new OnClickCommandAnswerVerifier(question, shuffledAnswers[2])); 
+  clickableAreas[4] = new ClickArea(31, 712, 430, 753, new OnClickCommandAnswerVerifier(question, shuffledAnswers[3])); 
   
 }
 
@@ -129,7 +128,7 @@ public void PrintOptionsPage(){
   background = loadImage("blankpage.png");
   
   //Options page 
-  background(165,165,255);
+  background(165, 165, 255);
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
@@ -137,7 +136,7 @@ public void PrintOptionsPage(){
   
   //Assign
   clickableAreas = new ClickArea[1];
-  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
 
 }
 
@@ -146,7 +145,7 @@ public void PrintCorrectAnswerPage(){
   background = loadImage("correctanswer.png");
   
   //Correct answer  
-  background(165,165,255);
+  background(165, 165, 255);
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
@@ -154,9 +153,8 @@ public void PrintCorrectAnswerPage(){
   
   //Assign
   clickableAreas = new ClickArea[2];
-  clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
-  clickableAreas[1] = new ClickArea(149,624,300,735, new OnClickCommandOpenQuiz()); //Go to the next question
-  
+  clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[1] = new ClickArea(149, 624, 300, 735, new OnClickCommandOpenQuiz()); //Go to the next question
   
   //Points
   right += 1;
@@ -169,7 +167,7 @@ public void PrintCorrectAnswerPage(){
   //Button text
   textSize(50);
   fill(#6057e0);
-  text("OK", 190,700);
+  text("OK", 190, 700);
   
 }
 
@@ -178,7 +176,7 @@ public void PrintIncorrectPage(){
   background = loadImage("incorrectanswer.png");
   
   //Incorrect page  
-  background(165,165,255);
+  background(165, 165, 255);
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
@@ -200,7 +198,7 @@ public void PrintIncorrectPage(){
   //Button text
   textSize(50);
   fill(#6057e0);
-  text("OK", 190,700);
+  text("OK", 190, 700);
   
 }
 
@@ -209,7 +207,7 @@ public void PrintEndgamePage(){
   background = loadImage("endgame.jpeg"); //****needs the correct image file*****
   
   //Endgame page  
-  background(165,165,255);
+  background(165, 165, 255);
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
@@ -223,9 +221,9 @@ public void PrintEndgamePage(){
   //Text
   textSize(50);
   fill(#21CE00);
-  text(right, 110,480);
+  text(right, 110, 480);
   fill(#CE1500);
-  text(wrong, 300,480);
+  text(wrong, 300, 480);
   
   //Button
   fill(#7e7efe);
@@ -234,6 +232,6 @@ public void PrintEndgamePage(){
   rect(width/2, 680, 150, 110, 32); 
   //Button text
   fill(#6057e0);
-  text("OK", 190,700);
+  text("OK", 190, 700);
   
 }

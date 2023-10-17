@@ -55,12 +55,11 @@ class Question {
 
 ArrayList selectQuestionsByGrade(ArrayList<Question> questions, ArrayList grades) {
  ArrayList gradeQuestions = new ArrayList();
- 
+
   for (int i = 0 ; i < grades.size(); i++){
     for (int j = 0 ; j < questions.size(); j++) {     
       if (questions.get(j).grade.equals(grades.get(i))) {
         gradeQuestions.add(questions.get(j));
-        print(gradeQuestions);
       }
     }
   }
