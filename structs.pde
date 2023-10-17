@@ -44,11 +44,34 @@ class Question {
 
   }
   
-  String[] shuffleAnswers() {
+  String[] shuffleAnswers() { //Shuffle the answers, so they change place on the quiz.
    var answersList = new ArrayList<>(Arrays.asList(answers));
    Collections.shuffle(answersList);
 
    return answersList.toArray(new String[answersList.size()]);
+  }
+  
+  String breakLine() { //Insert breaklines on the question text.
+    String question = this.text;
+    String[] words = question.split(" ");
+    String formattedQuestion = "";
+    String line = "";
+    int i = 0;
+    
+    while (i < words.length) {
+      if ((line.length() + 1 + words[i].length()) < 30) {
+        line += words[i] + " ";
+        i++;
+      }
+      else {
+        formattedQuestion += line + "\n";
+        line = ""; 
+       }
+    }
+    
+    formattedQuestion += line;
+    
+    return formattedQuestion;
   }
   
 }

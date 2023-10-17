@@ -93,16 +93,18 @@ public void PrintQuizPage(){
   //Extra Behaviour
   currentBehaviour = new QuizBehaviour(); //<--- This page needs custom behaviour!!
   
+///////It would be better to move this part of the code outside of PrintQuizPage()
   //Question selection
   ArrayList grades = new ArrayList();
-  grades.add("1");//Waiting for the options to select grades.
-  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions,grades);// ----> Waiting for the options to select grades.
+  grades.add("1");///////Waiting for the options to select grades.
+  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions, grades);////// Waiting for the options to select grades.
   int selectedQuestion = selectQuestion(gradeQuestions);
   Question question = gradeQuestions.get(selectedQuestion);
+///////
 
   //Question text
   textSize(25);
-  text(question.text, 40, 180);
+  text(question.breakLine(), 40, 180);
   
   //Question image
   questionImage = loadImage(question.image);
@@ -155,22 +157,11 @@ public void PrintCorrectAnswerPage(){
   currentBehaviour = null;
   
   //Assign
-  clickableAreas = new ClickArea[2];
+  clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
-  clickableAreas[1] = new ClickArea(149, 624, 300, 735, new OnClickCommandOpenQuiz()); //Go to the next question
   
   //Points
   right += 1;
-  
-  //Button
-  fill(#7e7efe);
-  rect(width/2+10, 690, 150, 110, 32);
-  fill(255);
-  rect(width/2, 680, 150, 110, 32); 
-  //Button text
-  textSize(50);
-  fill(#6057e0);
-  text("OK", 190, 700);
   
   PrintSceneBase();
 
@@ -190,22 +181,12 @@ public void PrintIncorrectPage(){
   currentBehaviour = null;
   
   //Assign
-  clickableAreas = new ClickArea[2];
+  clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15,15,85,75, new OnClickCommandOpenMainMenu()); //Return to main menu
-  clickableAreas[1] = new ClickArea(149,624,300,735, new OnClickCommandOpenQuiz()); //Go to the next question
    
   //Points
   wrong += 1;
   
-  //Button
-  fill(#7e7efe);
-  rect(width/2+10, 690, 150, 110, 32);
-  fill(255);
-  rect(width/2, 680, 150, 110, 32); 
-  //Button text
-  textSize(50);
-  fill(#6057e0);
-  text("OK", 190, 700);
   PrintSceneBase();
 
   //delay(2000);
