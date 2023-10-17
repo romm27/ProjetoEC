@@ -91,7 +91,9 @@ public void PrintQuizPage(){
   currentBehaviour = null; //<--- This page needs custom behaviour!!
   
   //Question selection
-  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions,"1");// ----> grade is not selected by user yet
+  ArrayList grades = new ArrayList();
+  grades.add("1");//Waiting to the options to select grades.
+  ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions,grades);// ----> Waiting to the options to select grades.
   int selectedQuestion = selectQuestion(gradeQuestions);
   Question question = gradeQuestions.get(selectedQuestion);
   print(question);
