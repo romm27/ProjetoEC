@@ -63,3 +63,20 @@ public class OnClickCommandOpenEndgame extends OnClickCommand{
     PrintEndgamePage();
   }
 }
+
+
+//Change Options
+public class OnClickCommandSwitchMusic extends OnClickCommand{ // Mutes/Unmutes Music
+  public void OnClick(){
+    playMusic = !playMusic;
+    
+    if(playMusic) musica.play();
+    else musica.pause();
+  }
+}
+
+public class OnClickCommandSwitchSeries extends OnClickCommand{ // Mutes/Unmutes Music
+  public void OnClick(){
+    
+  }
+}

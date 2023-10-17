@@ -7,7 +7,7 @@ final float appVersion = 1.0f; //<-- current version of the app
 
 //Global Settings
 boolean saveStats = true;
-boolean music = true;
+boolean playMusic = true;
 boolean soundEffects = true;
 int secondsPerQuestion = 30;
 int questionUnlockTime = 500; //In miliseconds!
