@@ -57,8 +57,7 @@ void draw(){
 
   //Gambiarra
   if(waitingForQuizSwitch){
-    int temp = millis() + 5000;
-    if(temp >= asnwerOpenTime){
+    if(millis() >= asnwerOpenTime + 1500){
       PrintQuizPage();
       waitingForQuizSwitch = false;
     }
