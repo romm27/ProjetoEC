@@ -12,7 +12,7 @@ public class OnClickCommandOpenMainMenu extends OnClickCommand{
   }
 }
 
-//Open Content Menu
+//Open Authors Page
 public class OnClickCommandOpenAuthors extends OnClickCommand{
   public void OnClick(){
     PrintAuthorsPage();

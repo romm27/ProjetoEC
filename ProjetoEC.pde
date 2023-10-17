@@ -58,7 +58,7 @@ void mouseClicked(){
 }
 
 public void CheckForTap(){
-  //Check if the tap was inside any active loaded area
+//Check if the tap was inside any active clickable area
   if(debugMode){
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     print("x:" + mouseX + '\n');
