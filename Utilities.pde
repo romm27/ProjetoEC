@@ -44,7 +44,7 @@ public void SaveSettings(){
 }
 
 public void LoadSettings(){
-    if(DoesFileSaveFileExist()){
+    //if(DoesFileSaveFileExist()){
         print("Called!");
     String[] temp = loadStrings("settings.txt");
     for(int i = 0; i < temp.length; i++){
@@ -86,10 +86,10 @@ public void LoadSettings(){
         if(temp[i] == "muted") playMusic = false;
         if(temp[i] == "unmuted") playMusic = true;
         }
-    }
-    else{
-        SaveSettings();
-    }
+    //}
+    //else{
+    //    SaveSettings();
+    //}
 }
 
 boolean DoesFileSaveFileExist() {

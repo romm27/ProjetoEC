@@ -24,7 +24,7 @@ Movie credits;
 //Text
 PFont f;
 
-//Gambiarra
+//Quiz Timer
 boolean waitingForQuizSwitch = false;
 int asnwerOpenTime = 0;
 
