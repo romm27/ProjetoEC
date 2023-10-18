@@ -1,4 +1,4 @@
-import processing.video.*;
+import processing.Video*1
 
 //Use this file to build scenes
 
@@ -82,13 +82,18 @@ public void PrintAuthorsPage(){
   image(background, 0, 0, width, height);
   
   //Extra Behaviour
-  currentBehaviour = new AuthorsPageBehaviour(); //<--- This page needs custom behaviour!!
+  currentBehaviour = null; //<--- This page needs custom behaviour!!
   
   //Assign
   clickableAreas = new ClickArea[1];
   clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
   PrintSceneBase();
+
+  //Video
+  video = new Capture(this, 450, 800);
+  play("")
 }
+
 //Quiz
 public void PrintQuizPage(){
   //Load background

@@ -3,6 +3,7 @@
 //import
 import java.util.Collections;
 import java.util.Random;
+import processing.video.*;
 
 //Describes an area of the canvas that is clickable.
 public class ClickArea{
@@ -27,6 +28,16 @@ public class SceneBehaviour{
 public class QuizBehaviour extends SceneBehaviour{
   public void Update(){
     
+  }
+}
+
+void movieEvent(Movie video){
+  video.read();
+}
+
+public class AuthorsPageBehaviour extends SceneBehaviour{
+  public void Update(){
+    image(credits, 0, 125, 450, 675);
   }
 }
 

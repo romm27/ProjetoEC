@@ -18,6 +18,9 @@ ClickArea[] clickableAreas;
 SceneBehaviour currentBehaviour;
 ArrayList questions = new ArrayList();
 
+//Video
+Movie credits;
+
 //Text
 PFont f;
 
@@ -27,7 +30,12 @@ int asnwerOpenTime = 0;
 
 void setup(){
   size(450, 800);
-  LoadSettings();
+  //LoadSettings();
+
+  //Load Video
+  credits = new Movie(this, "credits.mp4");
+  credits.loop();
+
 
   PrintMainMenu();
   //Som - Anthony
