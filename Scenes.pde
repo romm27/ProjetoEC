@@ -64,7 +64,7 @@ public void PrintMainMenu(){
   PrintSceneBase();
   
   //Reset score
-  lastHighScore = right - wrong;
+  lastHighScore = right;
   right = 0;
   wrong = 0;
   askedQuestions = new ArrayList();
@@ -192,7 +192,7 @@ public void PrintOptionsPage(){
   fill(#7e7efe);
   text("Última pontuação:", 50, 550);
   String score = str(lastHighScore);
-  text(score, 190, 610);//// Precisa colocar a pontuação correta
+  text(score, 200, 610);//// Precisa colocar a pontuação correta
   
   //Button
   fill(#7e7efe);

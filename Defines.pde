@@ -1,6 +1,6 @@
 //Use this file to define variables.
 //Defines
-boolean debugMode = false; //Developer mode
+boolean debugMode = true; //Developer mode
 
 //Global Static
 final float appVersion = 1.0f; //<-- current version of the app
