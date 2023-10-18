@@ -26,3 +26,4 @@ boolean fifthGrade = false;
 
 //Stored
 int startDelayMil = 0;
+int lastHighScore = 0;
