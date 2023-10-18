@@ -8,6 +8,7 @@ public class OnClickCommand {
 //Return to Main Menu
 public class OnClickCommandOpenMainMenu extends OnClickCommand{
   public void OnClick(){
+    waitingForQuizSwitch = false; //<-- in case the user cancels the current question
     PrintMainMenu();
   }
 }
@@ -64,19 +65,56 @@ public class OnClickCommandOpenEndgame extends OnClickCommand{
   }
 }
 
-
-//Change Options
-public class OnClickCommandSwitchMusic extends OnClickCommand{ // Mutes/Unmutes Music
+public class OnClickCommandSettingsOkButton extends OnClickCommand{
   public void OnClick(){
-    playMusic = !playMusic;
+    //Check for valid grade selection
+    if(!firstgrade && !secondGrade && !thirdGrade && !forthGrade && !fifthGrade){ //<-- automatically selects the first grade if all are disabled!
+      firstgrade = true;
+    }
     
-    if(playMusic) musica.play();
-    else musica.pause();
+    SaveSettings();
+    PrintMainMenu();
   }
 }
 
-public class OnClickCommandSwitchSeries extends OnClickCommand{ // Mutes/Unmutes Music
+//Change Options
+public class OnClickCommandSwitchSound extends OnClickCommand{ // Mutes/Unmutes Music
   public void OnClick(){
+    playMusic = !playMusic;
     
+    if(playMusic) musica.play(); else musica.pause();
+
+    //Update Screen
+    PrintOptionsPage();
+  }
+}
+
+//Grade Commands
+public class OnClickCommand1stGrade extends OnClickCommand{
+  public void OnClick(){
+    ModifySeries(1);
+  }
+}
+
+public class OnClickCommand2thGrade extends OnClickCommand{
+  public void OnClick(){
+    ModifySeries(2);
+  }
+}
+
+public class OnClickCommand3rdGrade extends OnClickCommand{
+  public void OnClick(){
+    ModifySeries(3);
+  }
+}
+
+public class OnClickCommand4thGrade extends OnClickCommand{
+  public void OnClick(){
+    ModifySeries(4);
+  }
+}
+public class OnClickCommand5thGrade extends OnClickCommand{
+  public void OnClick(){
+    ModifySeries(5);
   }
 }

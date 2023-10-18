@@ -100,8 +100,7 @@ public void PrintQuizPage(){
   currentBehaviour = new QuizBehaviour(); //<--- This page needs custom behaviour!!
   
   //Question selection
-  ArrayList grades = new ArrayList();
-  grades.add("1");///////******Waiting for the options to select grades.**********
+  ArrayList grades = GetSelectedGrades();
   ArrayList<Question> gradeQuestions = selectQuestionsByGrade(questions, grades);//////***** Waiting for the options to select grades.******
   ArrayList<Question> availableQuestion = new ArrayList();
   
@@ -148,7 +147,7 @@ public void PrintQuizPage(){
 public void PrintOptionsPage(){
 
   //Load Images
-  background = loadImage("blankpage.png");
+  background = loadImage("purplepage.png");
   
   //Options page 
   background(165, 165, 255);
@@ -157,10 +156,61 @@ public void PrintOptionsPage(){
   //Extra Behaviour
   currentBehaviour = null;
   
+  //White background rectangle
+  rectMode(CENTER);
+  fill(#7e7efe);
+  rect(width/2 + 10, 410, 410, 510, 32);
+  fill(255);
+  rect(width/2, 400, 410, 510, 32);
+  
+  color selectedColor = #AF1CAD;
+  color unselectedColor = #909090;
+  //text
+  fill(#7e7efe);
+  textSize(40);
+  text("Escolha as séries", 55, 210);
+  if(firstgrade) fill(selectedColor); else fill(unselectedColor);
+  text("1", 90, 260);
+  if(secondGrade) fill(selectedColor); else fill(unselectedColor);
+  text("2", 150, 260);
+  if(thirdGrade) fill(selectedColor); else fill(unselectedColor);
+  text("3", 210, 260);
+  if(forthGrade) fill(selectedColor); else fill(unselectedColor);
+  text("4", 275, 260);
+  if(fifthGrade) fill(selectedColor); else fill(unselectedColor);
+  text("5", 336, 260);
+  
+  fill(#7e7efe);
+  text("Música", 160, 350);
+  if(playMusic) fill(selectedColor); else fill(unselectedColor);
+  text("Ligado", 50, 400);
+  if(!playMusic) fill(selectedColor); else fill(unselectedColor);
+  text("Desligado", 220, 400);
+  
+  fill(#7e7efe);
+  text("Última pontuação:", 50, 550);
+  text("100", 190, 610);//// Precisa colocar a pontuação correta
+  
+  //Button
+  fill(#7e7efe);
+  rect(width/2 + 10, 740, 150, 110, 32);
+  fill(255);
+  rect(width/2, 730, 150, 110, 32); 
+  //Button text
+  textSize(50);
+  fill(#6057e0);
+  text("OK", 190, 745); 
+  
   //Assign
-  clickableAreas = new ClickArea[1];
+  clickableAreas = new ClickArea[8];
   clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
-
+  clickableAreas[1] = new ClickArea(40, 350, 400, 400, new OnClickCommandSwitchSound()); //Switch Sound
+  clickableAreas[2] = new ClickArea(80, 220, 110, 260, new OnClickCommand1stGrade()); //1 Grade
+  clickableAreas[3] = new ClickArea(150, 220, 180, 260, new OnClickCommand2thGrade()); //2 Grade
+  clickableAreas[4] = new ClickArea(200, 220, 240, 260, new OnClickCommand3rdGrade()); //3 Grade
+  clickableAreas[5] = new ClickArea(270, 220, 300, 260, new OnClickCommand4thGrade()); //4 Grade
+  clickableAreas[6] = new ClickArea(330, 220, 360, 260, new OnClickCommand5thGrade()); //5 Grade
+  clickableAreas[7] = new ClickArea(170, 675, 300, 780, new OnClickCommandSettingsOkButton()); //Ok 
 }
 
 public void PrintCorrectAnswerPage(){
@@ -176,7 +226,7 @@ public void PrintCorrectAnswerPage(){
   
   //Assign
   clickableAreas = new ClickArea[1];
-  clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu
+  clickableAreas[0] = new ClickArea(15, 15, 85, 75, new OnClickCommandOpenMainMenu()); //Return to main menu1
   
   //Points
   right += 1;

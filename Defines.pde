@@ -17,6 +17,12 @@ ArrayList askedQuestions = new ArrayList(); //Questions answered by the user on 
 int right = 0; //<--- number of question gotten right ever since starting using the program
 int wrong = 0; //<--- number of question gotten wrong ever since starting using the program
 
+//Grades Settings
+boolean firstgrade = true;
+boolean secondGrade = false;
+boolean thirdGrade = false;
+boolean forthGrade = false;
+boolean fifthGrade = false;
 
 //Stored
 int startDelayMil = 0;

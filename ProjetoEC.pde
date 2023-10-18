@@ -27,6 +27,7 @@ int asnwerOpenTime = 0;
 
 void setup(){
   size(450, 800);
+  LoadSettings();
 
   PrintMainMenu();
   //Som - Anthony
@@ -34,6 +35,11 @@ void setup(){
   song = minim.loadFile("clicksom.mp3");
   musica = minim.loadFile("SafetyNet.mp3");
   musica.loop();
+
+  //Load Settings
+  if(playMusic) musica.play(); else musica.pause();
+
+
   //Reads the questions file. Let the data preloaded into the app, for a better performance
   String[] questionsLines = loadStrings("questions.tsv");
   
@@ -47,7 +53,6 @@ void setup(){
   //Create the font from the file in the data folder. 
   f = createFont("SNACKID.otf", 25);
   textFont(f);
-  
 }
 
 void draw(){
