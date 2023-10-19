@@ -30,7 +30,7 @@ int asnwerOpenTime = 0;
 
 void setup(){
   size(450, 800);
-  //LoadSettings();
+  //LoadSettings();1
 
   //Load Video
   credits = new Movie(this, "credits.mp4");
