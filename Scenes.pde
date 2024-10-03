@@ -120,14 +120,14 @@ public void PrintQuizPage(){
   int selectedQuestion = selectQuestion(availableQuestion);
   Question question = availableQuestion.get(selectedQuestion);
   askedQuestions.add(question.id);
-
-  //Question text
-  textSize(25);
-  text(question.breakLine(), 40, 180);
   
   //Question image
   questionImage = loadImage(question.image);
   image(questionImage,(width/2-questionImage.width/2), 263);
+
+  //Question text
+  textSize(25);
+  text(question.breakLine(), 40, 180);
     
   //Answers text
   String[] shuffledAnswers = question.shuffleAnswers();
