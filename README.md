@@ -5,10 +5,11 @@ Este foi um projeto desenvolvido no primeiro semestre (2023) do curso na discipl
 
 <p align="center">
 <img width="200" src="src/assets/to_readme/mathmagik.gif"><br>
+<img width="400" src="src/assets/to_readme/document.gif"><br>
 <img width="200" src="src/assets/to_readme/home.png"><br>
 <img width="200" src="src/assets/to_readme/quiz.png"><br>
 <img width="200" src="src/assets/to_readme/quiz2.png"><br>
-<img width="200" src="src/assets/to_readme/document.gif"><br>
+
 </p>
 
 ## Documento
