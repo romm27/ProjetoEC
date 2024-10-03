@@ -4,11 +4,11 @@
 Este foi um projeto desenvolvido no primeiro semestre (2023) do curso na disciplina Experiência Criativa, que é uma disciplina extensionista. O objetivo era ser um aplicativo educacional multimídia. Para definição de qual seria o tema e como seria este aplicativo, fizemos uma pesquisa extensa com vários alunos e professores do ensino fundamental. Foi com base nela que definimos que fazer um jogo/ quiz de matemática seria uma ideia interessante. O aplicativo conta com banco de dados de questões de matemática do primeiro ao quinto ano do ensino fundamental e foi escrito em java, em um software chamado Processing. Nosso trabalho foi elogiado pelo professor, e é inclusive utilizado como exemplo para os calouros.
 
 <p align="center">
-<img width="400" src="src/assets/to_readme/mathmagik.gif">
-<img width="400" src="src/assets/to_readme/document.gif">
-<img width="400" src="src/assets/to_readme/home.png">
-<img width="400" src="src/assets/to_readme/quiz.png">
-<img width="400" src="src/assets/to_readme/quiz2.png">
+<img width="200" src="src/assets/to_readme/mathmagik.gif"><br>
+<img width="200" src="src/assets/to_readme/home.png"><br>
+<img width="200" src="src/assets/to_readme/quiz.png"><br>
+<img width="200" src="src/assets/to_readme/quiz2.png"><br>
+<img width="200" src="src/assets/to_readme/document.gif"><br>
 </p>
 
 ## Documento
