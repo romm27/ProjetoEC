@@ -5,15 +5,16 @@ Este foi um projeto desenvolvido no primeiro semestre (2023) do curso na discipl
 
 <p align="center">
 <img width="200" src="src/assets/to_readme/mathmagik.gif"><br>
-<img width="400" src="src/assets/to_readme/document.gif"><br>
 <img width="200" src="src/assets/to_readme/home.png"><br>
 <img width="200" src="src/assets/to_readme/quiz.png"><br>
 <img width="200" src="src/assets/to_readme/quiz2.png"><br>
-
 </p>
 
 ## Documento
 Para ler o documento do projeto, com as pesquisas realizadas com alunos e professores, e sobre as decisões tomadas ao longo deste trabalho, acesse a página "documents", e abra o arquivo "Documento de projeto".
+<p align="center">
+<img width="400" src="src/assets/to_readme/document.gif"><br>
+</p>
 
 ## Como rodar
 Para rodar o Mathmagik, você deve baixar o programa chamado Processing, [aqui](https://processing.org/).
