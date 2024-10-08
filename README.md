@@ -17,5 +17,5 @@ Para ler o documento do projeto, com as pesquisas realizadas com alunos e profes
 </p>
 
 ## Como rodar
-Para rodar o Mathmagik, você deve baixar o programa chamado Processing, [aqui](https://processing.org/).
-Instale o programa, clique em abrir e escolha o arquivo chamado "ProjetoEC". Em seguida clique no simbolo de play, e é só jogar!
+Para rodar o Mathmagik, você pode clicar nos releases, e baixar a versão para windows, ou rodá-lo pelo Processing.
+Para rodar pelo Processing, você deve baixar o aplicativo [aqui](https://processing.org/), em seguida instale o programa, clique em abrir e escolha o arquivo chamado "ProjetoEC". E então clique no simbolo de play, e é só jogar!
